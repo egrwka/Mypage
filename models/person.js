@@ -23,4 +23,13 @@ module.exports = class Person{
         });
     }
 
+    static fetchData(callBack){
+        fs.readFile(p,(error, fileContent)=>{
+            if(error){
+                callBack([]);
+                return [];
+            }
+            callBack(JSON.parse(fileContent));
+        })
+    }
 }

@@ -1,5 +1,9 @@
 const Person = require('../models/person');
 
 exports.fetchPersonData = (req, res) => {
-    res.render('index.ejs');
+    Person.fetchData(person => {
+        console.log(person);
+        res.render('index.ejs', {personData: person});
+    });
+    
 }
