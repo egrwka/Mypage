@@ -18,7 +18,7 @@ module.exports = class Person{
 
             myData.push(this);
             fs.writeFile(p, JSON.stringify(myData), (error) => {
-                console.log(error);
+                console.log("error: ", error);
             });
         });
     }
